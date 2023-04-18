@@ -1,8 +1,8 @@
 # Research Paper
-Name:
-Semester:
-Topic:
-Link The Repository: 
+Name: Chih-Tao Lee
+Semester: 2023 Spring
+Topic: Analyzing Ant Colony Optimization Algorithm and comparing it with naive shortest cycle algorithm
+Link The Repository: https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort
 
 ## Introduction
 - What is the algorithm/datastructure?
@@ -10,6 +10,9 @@ Link The Repository:
 - Provide a brief history of the algorithm/datastructure. (make sure to cite sources)
 - Provide an introduction to the rest of the paper. 
 
+In this final research paper, I selected Ant Colony Optimization to be the algorithm I'd be introducing and analyzing later in the following section. The Ant Colony Optimization is the optimization algorithm to solve TSP(Travelling Salesman Problem). It was first proposed in 1991 by Marco Dorigo and inspired by the behavior of biological ants searching for food. Even though the initial versions didn't provide results that's promising enough, its potential encouraged many researchers starting to study and improve this algorithm. Nowadays, ACO (Ant Colony Optimization) has been widely used in the field of both scientific and industrial.
+
+In the latter section of this paper, I would be demostrating the implementation of ACO of solving TSP problem and comparing it with a naive algorithm of solving TSP problem in the perspective of time complexity, space complexity, and accuracy.
 
 ## Analysis of Algorithm/Datastructure
 Make sure to include the following:
