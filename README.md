@@ -36,7 +36,11 @@ $$\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}
 - $\Delta\tau_{xy}^{k}$ represents the amount of pheromone deposited by kth ant.
 - $\Delta\tau_{xy}^{k} = \frac{Q}{L_{k}} \mbox{  or  } 0 \mbox{  if no ants pass edge xy}$, where $Q$ is the amount of pheromone carried per ant $L_{k}$ is the distance kth ant traveled.
 
-The time complexity of the Ant Colony Optimization I implemented is $O(n^{2})$, where $n$ is the number of vetices in the graph. Since the ant has to visit every vertex only once, when the ant made its decision, the avaliable options would decrease by one. To make a decision, the ant has to know all the possibility of avaliable paths. Therefore, an ant going through the graph once takes $\frac{n (n - 1)}{2}$
+Before we discuss the time complexity and the space complexity, there is a important precondition of my implementation that I have to mention. All the graphs we consider in this algorithm have to be fully connected graphs which means there is always an edge between every pair of vertices in this graph.
+
+The time complexity of the Ant Colony Optimization I implemented is $O(n^{2})$, where $n$ is the number of vetices in the graph. Since the ant has to visit every vertex only once, when the ant made its decision, the avaliable options would decrease by one. To make a decision, the ant has to know all the possibility of avaliable paths. Therefore, an ant going through the graph once takes $\frac{n (n - 1)}{2}$ operations. Updating the pheromone takes $n$ operations. Updating the best route takes also $n$ operations. The total operations needed for a fully run of this algorithm would be $\frac{n (n - 1)}{2} + n + n$, so the time complexity is $O(n^{2})$. To increase the accuracy of this algorithm, we can decide how many time we want to run this algorithm. However, the numberof times we run this algorithm actually would affect the time complexity of the algorithm itself. Instead, it would just increase the runtime of the whole procedure.
+
+The space complexity of my implementation is $O(n^{2})$, because I used two dectionaries of dictionaries(hashmap) to store the distance and pheromone amount between every two vertices. Each vertex in the dictionary has a dictionary of all the other vertices as keys and the distance or pheromone amount as values.
 
 
 ## Empirical Analysis
