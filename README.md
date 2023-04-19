@@ -34,7 +34,7 @@ $$\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}
 - $\rho$ is the pheromone evaporation coefficient.
 - $m$ is the amount of ants passing the edge between point $x$ to point $y$.
 - $\Delta\tau_{xy}^{k}$ represents the amount of pheromone deposited by $k$th ant.
-- $\Delta\tau_{xy}^{k} = \frac{Q}{L_{k}} \mbox{  or  } 0 \mbox{  if no ants pass edge xy}$ 
+- $\Delta\tau_{xy}^{k} = \frac{Q}{L_{k}} \mbox{  or  } 0 \mbox{  if no ants pass edge xy}$, where $Q$ is the amount of pheromone carried per ant $L_{k}$ is the distance $k$th ant traveled.
 
 
 
