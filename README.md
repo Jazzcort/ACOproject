@@ -24,7 +24,7 @@ Since the ACO was inspired by the foraging behavior of natural ants, pheromone w
 
 $$p_{xy}^{k} = \frac{(\tau_{xy})^{\alpha} (\eta_{xy})^{\beta}}{\sum_{z\in allowed_{x}}(\tau_{xz})^{\alpha}(\eta_{xz})^{\beta}}$$
 
-$p_{xy}^{k}$ represents the probability of kth ant moving from point x to point y
+$p_{xy}^{k}$ represents the probability of $kth$ ant moving from point $x$ to point $y$
 
 ## Empirical Analysis
 - What is the empirical analysis?
