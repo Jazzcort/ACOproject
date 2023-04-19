@@ -47,7 +47,9 @@ Here is the table of comparing the time complexity and space complexity between 
 | Algorithm |  Time Complexity | Space Complexity | 
 | :-- | :-- |  :-- |
 | ACO | $O(n^{2})$ | $O(n^{2})$ |
-| naive | $O(n!)$  | $O(n)$ |
+| Naive (Brute-force) | $O(n!)$  | $O(n)$ |
+
+
 
 ## Empirical Analysis
 - What is the empirical analysis?
