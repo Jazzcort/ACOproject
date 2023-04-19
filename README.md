@@ -35,6 +35,8 @@ $$\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}
 - $m$ is the amount of ants passing the edge between point $x$ to point $y$.
 - $\Delta\tau_{xy}^{k} = \left\{ \begin{array}{rcl}} Q/L_{k} & \mbox{if ant k uses edge xy in its tour}\end{array}\right $
 
+$y =\left[2x+\left(\cfrac{1}{x}+ \cfrac{1}{x^2} + \cfrac{1}{x^3} +\cdots+ \cfrac{1}{x^n} \right) \right]$
+
  represents the amount of pheromone deposited by $k$th ant.
 
 
