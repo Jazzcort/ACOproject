@@ -20,6 +20,10 @@ Make sure to include the following:
 - Space Complexity
 - General analysis of the algorithm/datastructure
 
+Since the ACO was inspired by the foraging behavior of natural ants, pheromone was introduced in this algorithm. Basically, when an ant is passing through an edge in the graph, it deposits pheromone on this edge. The amount of pheromone on the edge becomes one of the two factors that affects an ant to choose where it would go next. The other factor would be the reciprocal of the distance between two points. The formula to calculate the possibility of choosing each path is:
+
+$$p_{xy}^{k}$$
+
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples / data.
