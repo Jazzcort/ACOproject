@@ -23,7 +23,7 @@ Make sure to include the following:
 Since the ACO was inspired by the foraging behavior of natural ants, pheromone was introduced in this algorithm. Basically, when an ant is passing through an edge in the graph, it deposits pheromone on this edge. The amount of pheromone on the edge becomes one of the two factors that affects an ant to choose where it would go next. The other factor would be the reciprocal of the distance between two points. The formula to calculate the possibility of choosing each path is:
 
 $$p_{xy}^{k} = \frac{(\tau_{xy})^{\alpha} (\eta_{xy})^{\beta}}{\sum_{z\in allowed_{x}}(\tau_{xz})^{\alpha}(\eta_{xz})^{\beta}}$$
-- $p_{xy}^{k}$ represents the probability of $k$th ant moving from point $x$ to point $y$. 
+- $p_{xy}^{k}$ represents the probability of $k$ th ant moving from point $x$ to point $y$. 
 - $(\tau_{xy})^{\alpha}$ is the amount of pheromone deposited on the edge between $x$ and $y$, and $0\leq \alpha$ represents a parameter to adjust the influence of $\tau_{xy}$.
 - $(\eta_{xy})^{\beta}$ is the reciprocal of the distance between point $x$ and point $y$, and $\beta\geq1$ represents a parameter to adjust the influence if $\eta_{xy}$.
 - The denominator part is the sum of $(\tau_{xz})^{\alpha}(\eta_{xz})^{\beta}$ for z $\in$ allowed destinations from $x$ 
@@ -33,8 +33,8 @@ Beside the formula of calculating possibility to choose paths, there is another 
 $$\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}$$
 - $\rho$ is the pheromone evaporation coefficient.
 - $m$ is the amount of ants passing the edge between point $x$ to point $y$.
-- $\Delta\tau_{xy}^{k}$ represents the amount of pheromone deposited by $k$th ant.
-- $\Delta\tau_{xy}^{k} = \frac{Q}{L_{k}} \mbox{  or  } 0 \mbox{  if no ants pass edge xy}$, where $Q$ is the amount of pheromone carried per ant $L_{k}$ is the distance $k$th ant traveled.
+- $\Delta\tau_{xy}^{k}$ represents the amount of pheromone deposited by $k$ th ant.
+- $\Delta\tau_{xy}^{k} = \frac{Q}{L_{k}} \mbox{  or  } 0 \mbox{  if no ants pass edge xy}$, where $Q$ is the amount of pheromone carried per ant $L_{k}$ is the distance $k$ th ant traveled.
 
 
 
