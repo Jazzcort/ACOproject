@@ -33,7 +33,7 @@ Beside the formula of calculating possibility to choose paths, there is another 
 $$\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}$$
 - $\rho$ is the pheromone evaporation coefficient.
 - $m$ is the amount of ants passing the edge between point $x$ to point $y$.
-- $\Delta\tau_{xy}^{k} = \left\{ \begin{array}{rcl}
+- $\Delta\tau_{xy}^{k} = \left \begin{array}{rcl}
 \overline{\overline{z^2}+\cos z} & \mbox{for}
 & |z|<3 \\ 0 & \mbox{for} & 3\leq|z|\leq5 \\
 \sin\overline{z} & \mbox{for} & |z|>5
