@@ -49,7 +49,9 @@ Here is the table of comparing the time complexity and space complexity between 
 | ACO | $O(n^{2})$ | $O(n^{2})$ |
 | Naive (Brute-force) | $O(n!)$  | $O(n)$ |
 
+As what we can observe from the above table, ACO algorithm reduce the time complexity significantly from $O(n!)$ to $O(n^{2})$. However, the tradeoff is the accuracy of the result. In the ACO algorithm, the result is not guaranteed to be the shortest cycle of visiting every vertex, but it's close enough and practical to apply to the real world. Although the naive solution can always find the shortest cycle, it becomes impractical even there is only 20 vertices in the graph.
 
+In the next cestion, I would use some data collected from different senarios to demonstrate the accuracy of ACO algorithm.
 
 ## Empirical Analysis
 - What is the empirical analysis?
