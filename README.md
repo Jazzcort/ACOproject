@@ -36,6 +36,7 @@ $$\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}
 - $\Delta\tau_{xy}^{k}$ represents the amount of pheromone deposited by kth ant.
 - $\Delta\tau_{xy}^{k} = \frac{Q}{L_{k}} \mbox{  or  } 0 \mbox{  if no ants pass edge xy}$, where $Q$ is the amount of pheromone carried per ant $L_{k}$ is the distance kth ant traveled.
 
+The time complexity of the Ant Colony Optimization I implemented is $O(n^{2})$, where $n$ is the number of vetices in the graph. Since the ant has to visit every vertex only once, when the ant made its decision, the avaliable options would decrease by one. To make a decision, the ant has to know all the possibility of avaliable paths. Therefore, an ant going through the graph once takes $\frac{n (n - 1)}{2}$
 
 
 ## Empirical Analysis
