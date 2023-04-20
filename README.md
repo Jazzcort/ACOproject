@@ -197,7 +197,7 @@ def create_possibility(self, src, forbiden):
 
         return possibility
 ```
-The create_possibility() function takes two parameters. The src is the name of the vertex where the ant is current at. The forbiden is a set of vertices that the ant has visited. In this function, it first iterates through all the vertices, and add the vertices that the ant has not visited into a list, candidates. Then, it creates a defaultdict to store the result of $\tau_{xy} \eta_{xy}$ for every vertex in candidates.
+The create_possibility() function takes two parameters. The src is the name of the vertex where the ant is current at. The forbiden is a set of vertices that the ant has visited. In this function, it first iterates through all the vertices, and add the vertices that the ant has not visited into a list, candidates. Then, it creates a defaultdict to store the result of $\tau_{src-dest} \eta_{src-dest}$ for every vertex in candidates.
 
 
 
