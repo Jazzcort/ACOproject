@@ -114,7 +114,8 @@ The ACO algorithm was originally intended for solving NP-hard problems such as T
 There are more NP-hard problems, where we can apply ACO algorithm to get optimized solutions. For example, 
 VRP (Vehicle routing problem), Industrial scheduling, NSP (nurse scheduling problem), Bayesian networks, and DNA sequencing, etc. These problems covered a large range of applications including routing, scheduling, machine learning, and bioinformatics. Beside the academic applications, there are also many connercial company utilizing ACO algorithm to solve the real world problems. The company AntOptima ([www.antoptima.com](www.antoptima.com)) is one of the best example. It developes ACO-based solution methods for their customers to improve the efficiency of productive and logistic processes in their business.
 
-Citation: Stützle, Thomas, et al. "A concise overview of applications of ant colony optimization." Wiley encyclopedia of operations research and management science 2 (2011): 896-911.
+### Citation: 
+1. Stützle, Thomas, et al. "A concise overview of applications of ant colony optimization." Wiley encyclopedia of operations research and management science 2 (2011): 896-911.
 ## Implementation
 - What language did you use?
 - What libraries did you use?
