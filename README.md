@@ -130,7 +130,21 @@ VRP (Vehicle routing problem), Industrial scheduling, NSP (nurse scheduling prob
 - [shortest_cycle.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/shortest_cycle.py): implementation of naive algorithm of finding shortest cycle in Python
 - [graph_utility.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/graph_utility.py): auxiliary program of generating random graphs
 - [generate_data.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/generate_data.py): auxiliary program of generating data for empirical analysis
-- 
+- [data_analysis.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/data_analysis.py): auxiliary program of calculating the accuracies of ACO algorithm
+- [data_analysis_diff.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/data_analysis_diff.py): auxiliary program of calculating the margins between the result given by ACO algorithm and the shortest cycle.
+
+I used Python for my implementation of ACO algorithm, because it's the programming language I'm most familier with. It could prevent me from spending too much time figuring out the errors caused by syntex  or mechanism of the language, so I could focus more on the developement of my omplementation. 
+
+```Python
+class ACO:
+    def __init__(self, filename, evaporateSpeed, pheromonePerAnt):
+        self.adj_dict = self.load_file(filename)
+        self.pheromone_dict = self.create_pheromone_dict()
+        self.evaporateSpeed = evaporateSpeed
+        self.pheromonePerAnt = pheromonePerAnt
+        self.bestRoute = []
+        self.minDistance = float("inf")
+```
 
 
 
