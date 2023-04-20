@@ -172,6 +172,33 @@ class ACO:
         return pher_dict
 ```
 
+I used the defaultdict from collections library im Python. It's an advanced hashmap structure that is easiler to set up default value than the general dictionary does. I also used the randint() function from random library to simulate the ant choosing path with possibilities. To initiate an ACO instance, we need to pass the name of the file containing the distance information, the pheromone evaporation coefficient, and the pheromone amount carried per ant. In the initiating process, the load_file() function would load the given file and construct the adjacent hashmap. The result would be store in the instance variable adj_dict. The create_pheromone_dict() would initiate a hashmap to keep on tracking the pheromone amount in each edge. The instance variable bestRoute would be initiate as an empty list, and it would be used to store the shortest cycle this algorithm has checked so far. The instance variable minDistance would be used to store the distance of the bestRoute.
+
+```Python
+def create_possibility(self, src, forbiden):
+        candidates = []
+
+        for option in self.adj_dict[src]:
+            if option in forbiden:
+                continue
+            else:
+                candidates.append(option)
+
+        factor = defaultdict(float)
+        total = 0
+        for candidate in candidates:
+            factor[candidate] = self.pheromone_dict[src][candidate] * (1 / self.adj_dict[src][candidate])
+            total += factor[candidate]
+
+        possibility = defaultdict(float)
+
+        for candidate in candidates:
+            possibility[candidate] = (factor[candidate] / total)
+
+        return possibility
+```
+The create_possibility() function takes two parameters. The src is the name of the vertex where the ant is current at. The forbiden is a set of vertices that the ant has visited. In this function, it first iterates through all the vertices, and add the vertices that the ant has not visited into a list, candidates. Then, it creates a defaultdict to store the result of $\tau_{xy} \eta_{xy}$ for every vertex in candidates.
+
 
 
 ## Summary
