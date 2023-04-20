@@ -59,7 +59,7 @@ In the next cestion, I would use some data collected from different senarios to 
 
 In this section, I used [graph_utility.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/graph_utility.py) to randomly generate 9 different graphs (3 graphs with 5 vertices, 3 graphs with 10 vertices, ans 3 graphs with 13 vetices). Then, I used [generate_data.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/generate_data.py) to apply the ACO algorithm to these graphs with different settings (run 1000 times, 2000 times, 5000 times, 10000times). Finally, I used [data_analysis.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/data_analysis.py) to calculate the accuracy of the shortest cycle given by the ACO algorithm and export the data in [accuracy.csv](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/accuracy.csv). Here is the table of accuracies:
 
-| Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000times |
+| Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000 times |
 | :-- | :--: |  :--: | :--: | :--: |
 | 5-vertices graph 1 | 100.0% | 100.0% | 100.0% | 100.0% |
 | 5-vertices graph 2 | 23.0% | 18.0% | 24.0% | 28.0% |
@@ -75,11 +75,13 @@ As what we can observe from the table above, there are some graphs that are hard
 
 The accuracy of finding the shortest cycle by ACO algorithm is actually quite random. It shows that the geometric feature has a significant influence on ACO algorithm for finding the shortest cycle. However, finding the shortest cycle is actually not that important. The main purpose of ACO algorithm is to come up with the cycle whose cost is close enough to the cost of shortest cycle with remarkable reduction in time complexity. Here is the table showing the differences of cost (distance) in percentage between the shortest cycle and the cycle given by ACO algorithm. (Here we only analyze the graphs with low accuracy of finding shortest cycle.)
 
-| Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000times |
+| Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000 times |
 | :-- | :--: |  :--: | :--: | :--: |
 | 5-vertices graph 2 |4.8% | 5.2% | 4.8% | 4.3% | 
 | 10-vertices graph 3 | 4.0% | 3.8% | 3.8% | 3.8% | 
 | 13-vertices graph 3 | 6.8% | 6.9% | 6.7% | 6.1% | 
+
+From the table above, we can observe that the average distance of the cycles given by ACO algorithm only differ slightly from the shortest cycle (Less than 7%). This margins is small enough to trade with the reduction of time complexity for practical applications. 
 
 
 
