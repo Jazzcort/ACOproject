@@ -28,9 +28,97 @@ def main():
     graph_13v_02 = ["13_vertices_run1000_02.csv", "13_vertices_run2000_02.csv", "13_vertices_run5000_02.csv", "13_vertices_run10000_02.csv"]
     graph_13v_03 = ["13_vertices_run1000_03.csv", "13_vertices_run2000_03.csv", "13_vertices_run5000_03.csv", "13_vertices_run10000_03.csv"]
 
-    
+    with open("accuracy.csv", mode="w") as w_file:
+        w_file.write("Graph      1000   2000   5000   10000\n")
+    #--------------------------------------------------------------
 
-    # print(calculate_accuracy("5_vertices_run10000_02.csv"))
+    tmp = ["5v_graph01"]
+    for g in graph_5v_01:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["5v_graph02"]
+    for g in graph_5v_02:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["5v_graph03"]
+    for g in graph_5v_03:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["10v_graph01"]
+    for g in graph_10v_01:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["10v_graph02"]
+    for g in graph_10v_02:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["10v_graph03"]
+    for g in graph_10v_03:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["13v_graph01"]
+    for g in graph_13v_01:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["13v_graph02"]
+    for g in graph_13v_02:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
+
+    #--------------------------------------------------------------
+
+    tmp = ["13v_graph03"]
+    for g in graph_13v_03:
+        tmp.append("{:.1f}%".format((calculate_accuracy(g) * 100)))
+    tmp.append("\n")
+
+    with open("accuracy.csv", mode="a") as a_file:
+        a_file.write(" ".join(tmp))
 
 if __name__ == "__main__":
     main()
