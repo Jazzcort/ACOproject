@@ -227,7 +227,7 @@ def update_pheromone(self, src, dest, count):
         self.pheromone_dict[src][dest] = n_pher
         self.pheromone_dict[dest][src] = n_pher
 ```
-The update_pheromone() function is to update the pheromone amount on the edge. It takes three parameters, the src and dest are the two vertices connected by the edge, the count is the number of ants that have passed this edge in a certain period of time. It basically follows the formula given in the previous section $\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}$
+The update_pheromone() function is to update the pheromone amount on the edge. It takes three parameters, the src and dest are the two vertices connected by the edge, the count is the number of ants that have passed this edge in a certain period of time. It basically follows the formula given in the previous [section](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort#analysis-of-algorithmdatastructure) 
 
 
 
