@@ -77,9 +77,9 @@ The accuracy of finding the shortest cycle by ACO algorithm is actually quite ra
 
 | Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000times |
 | :-- | :--: |  :--: | :--: | :--: |
-| 5-vertices graph 2 | 23.0% | 18.0% | 24.0% | 28.0% |
-| 10-vertices graph 3 | 0.0% | 0.0% | 0.0% | 0.0% |
-| 13-vertices graph 3 | 5.0% | 8.0% | 9.0% | 16.0% | 
+| 5-vertices graph 2 |4.8% | 5.2% | 4.8% | 4.3% | 
+| 10-vertices graph 3 | 4.0% | 3.8% | 3.8% | 3.8% | 
+| 13-vertices graph 3 | 6.8% | 6.9% | 6.7% | 6.1% | 
 
 
 
