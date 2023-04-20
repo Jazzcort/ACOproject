@@ -227,7 +227,49 @@ def update_pheromone(self, src, dest, count):
         self.pheromone_dict[src][dest] = n_pher
         self.pheromone_dict[dest][src] = n_pher
 ```
-The update_pheromone() function is to update the pheromone amount on the edge. It takes three parameters, the src and dest are the two vertices connected by the edge, the count is the number of ants that have passed this edge in a certain period of time. It basically follows the formula given in the previous [section](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort#analysis-of-algorithmdatastructure) 
+The update_pheromone() function is to update the pheromone amount on the edge. It takes three parameters, the src and dest are the two vertices connected by the edge, the count is the number of ants that have passed this edge in a certain period of time. It basically follows the formula given in the previous [section](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort#analysis-of-algorithmdatastructure). Since 0 amount of pheromone might cause some computational problem, I set the allowable minimum to be 0.01.
+
+```Python
+    def update_best_route(self, start):
+        visited = set()
+        visited.add(start)
+        src = start
+        route = [start]
+
+        while len(visited) < len(self.adj_dict):
+            possibility = self.create_possibility(src, visited)
+            choice = self.select_highest_possibility(possibility)
+            route.append(choice)
+            visited.add(choice)
+            src = choice
+
+        route.append(start)
+        distance = self.distance(route)
+
+        if distance < self.minDistance:
+            self.minDistance = distance
+            self.bestRoute = route[:]
+
+    def select_highest_possibility(self, possibility):
+        res = None
+        p = 0
+
+        for dest in possibility:
+            if possibility[dest] > p:
+                res = dest
+                p = possibility[dest]
+
+        return res
+
+    def distance(self, route):
+        res = 0
+        for i in range(len(route) - 1):
+            res += self.adj_dict[route[i]][route[i + 1]]
+
+        return res
+```
+
+After a certain amount of ants going through the graph, we have to update the bestRoute with current status. Instead of using randint() to choose the path, we always choose the path with the highest possibility. The select_highest_possibility() is an auxiliary function to select the vertex with the highest possibility, so I could make update_best_route() eariler to read. The distance() function is also an auxiliary function to calculate the distance of a route. In the update_best_route() function, It would check the distance of the route it produced with minDistance and updatet the bestRoute and the minDistance if the distance of the route it produced is smaller.
 
 
 
