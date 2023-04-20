@@ -81,8 +81,25 @@ The accuracy of finding the shortest cycle by ACO algorithm is actually quite ra
 | 10-vertices graph 3 | 4.0% | 3.8% | 3.8% | 3.8% | 
 | 13-vertices graph 3 | 6.8% | 6.9% | 6.7% | 6.1% | 
 
-From the table above, we can observe that the average distance of the cycles given by ACO algorithm only differ slightly from the shortest cycle (Less than 7%). This margins is small enough to trade with the reduction of time complexity for practical applications. 
+From the table above, we can observe that the average distance of the cycles given by ACO algorithm only differ slightly from the shortest cycle (Less than 7%). This margins is small enough to trade with the reduction of time complexity for practical applications. Here is the table showing the time cost:
 
+| Algorithm |  Time Cost | 
+| :-- | :--: | 
+| 5-vertices Naive | $\leq$ 0.01s | 
+| 5-vertices ACO 1000 times | 0.02s |
+| 5-vertices ACO 2000 times | 0.03s |
+| 5-vertices ACO 5000 times | 0.07s |
+| 5-vertices ACO 10000 times | 0.15s |
+| 10-vertices Naive | 0.34s | 
+| 10-vertices ACO 1000 times | 0.05s |
+| 10-vertices ACO 2000 times | 0.11s |
+| 10-vertices ACO 5000 times | 0.27s |
+| 10-vertices ACO 10000 times | 0.53s |
+| 13-vertices Naive | 42.44s | 
+| 13-vertices ACO 1000 times | 0.09s |
+| 13-vertices ACO 2000 times | 0.17s |
+| 13-vertices ACO 2000 times | 0.43s |
+| 13-vertices ACO 10000 times | 0.86s |
 
 
 ## Application
