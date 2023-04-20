@@ -45,7 +45,7 @@ The space complexity of my implementation is $O(n^{2})$, because I used two dect
 Here is the table of comparing the time complexity and space complexity between the ACO and naive algorithm of solving TSP in a fully connected graph:
 
 | Algorithm |  Time Complexity | Space Complexity | 
-| :-- | :-- |  :-- |
+| :-- | :--: |  :--: |
 | ACO | $O(n^{2})$ | $O(n^{2})$ |
 | Naive (Brute-force) | $O(n!)$  | $O(n)$ |
 
@@ -57,7 +57,12 @@ In the next cestion, I would use some data collected from different senarios to 
 - What is the empirical analysis?
 - Provide specific examples / data.
 
-In this section, I used [graph_utility.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/graph_utility.py) to randomly generate 9 different graphs (3 graphs with 5 vertices, 3 graphs with 10 vertices, ans 3 graphs with 13 vetices). Then, I used [generate_data.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/generate_data.py) to apply the ACO algorithm to these graphs with different settings (run 1000 times, 2000 times, 5000 times, 10000times). Finally, I used [data_analysis.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/data_analysis.py) to calculate the accuracy of the shortest cycle given by the ACO algorithm and export the data in [accuracy.csv](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/accuracy.csv). 
+In this section, I used [graph_utility.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/graph_utility.py) to randomly generate 9 different graphs (3 graphs with 5 vertices, 3 graphs with 10 vertices, ans 3 graphs with 13 vetices). Then, I used [generate_data.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/generate_data.py) to apply the ACO algorithm to these graphs with different settings (run 1000 times, 2000 times, 5000 times, 10000times). Finally, I used [data_analysis.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/data_analysis.py) to calculate the accuracy of the shortest cycle given by the ACO algorithm and export the data in [accuracy.csv](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/accuracy.csv). Here is the table of accuracies:
+
+| Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000times |
+| :-- | :-- |  :-- | :-- | :-- |
+| 5-vertices graph 1 |  | |
+| Naive (Brute-force) | $O(n!)$  | $O(n)$ |
 
 
 ## Application
