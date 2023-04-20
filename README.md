@@ -144,6 +144,29 @@ class ACO:
         self.pheromonePerAnt = pheromonePerAnt
         self.bestRoute = []
         self.minDistance = float("inf")
+
+    def load_file(self, filename):
+        adj_dict = defaultdict(lambda: defaultdict(float))
+        try:
+            with open(filename, mode="r") as r_file:
+                for i in r_file:
+                    tmp = i.strip("\n").split(" ")
+                    adj_dict[tmp[0]][tmp[1]] = float(tmp[2])
+                    adj_dict[tmp[1]][tmp[0]] = float(tmp[2])
+
+        except FileNotFoundError:
+            print(f"{self.filename} does not exist")
+            return
+
+        return adj_dict
+
+    def create_pheromone_dict(self):
+        pher_dict = defaultdict(lambda: defaultdict(float))
+        for src in self.adj_dict:
+            for dest in self.adj_dict[src]:
+                pher_dict[src][dest] = 0.01
+
+        return pher_dict
 ```
 
 
