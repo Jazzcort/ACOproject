@@ -101,6 +101,7 @@ From the table above, we can observe that the average distance of the cycles giv
 | 13-vertices ACO 2000 times | 0.43s |
 | 13-vertices ACO 10000 times | 0.86s |
 
+As the information showed above, when there are only 5 vertices in the graph, the difference in time cost is very small. However, as the vertices increase, the differences start to stand out. The time cost increases significantly (0.34 seconds to 42.44 seconds) for the naive algorithm while there are just three more vertices added to the graph (10 vertices v.s. 13 vertices). The time cost of applying naive algorithm to a 14-vertices graph is roughly 300 - 400 seconds, but the ACO algorithm still cost less than 1 second. Therefore, the ACO algorithm is much more practical to be applied in the real world, where we have ten thousand vetices or even hundred thousand vertices to deal with.
 
 ## Application
 - What is the algorithm/datastructure used for?
@@ -108,7 +109,12 @@ From the table above, we can observe that the average distance of the cycles giv
 - Why is it useful / used in that field area?
 - Make sure to provide sources for your information.
 
+The ACO algorithm was originally intended for solving NP-hard problems such as TSP. Because there are no polynomial-time algorithms found for NP-hard problems, ACO algorithm is often used to generate solutions with high-quallity in reasonable time cost.
 
+There are more NP-hard problems, where we can apply ACO algorithm to get optimized solutions. For example, 
+VRP (Vehicle routing problem), Industrial scheduling, NSP (nurse scheduling problem), Bayesian networks, and DNA sequencing, etc. These problems covered a large range of applications including routing, scheduling, machine learning, and bioinformatics. Beside the academic applications, there are also many connercial company utilizing ACO algorithm to solve the real world problems. The company AntOptima ([www.antoptima.com](www.antoptima.com)) is one of the best example. It developes ACO-based solution methods for their customers to improve the efficiency of productive and logistic processes in their business.
+
+Citation: Stützle, Thomas, et al. "A concise overview of applications of ant colony optimization." Wiley encyclopedia of operations research and management science 2 (2011): 896-911.
 ## Implementation
 - What language did you use?
 - What libraries did you use?
