@@ -71,9 +71,15 @@ In this section, I used [graph_utility.py](https://github.com/Spring23-CS5008-BO
 | 13-vertices graph 2 | 93.0% | 100.0% | 100.0% | 100.0% | 
 | 13-vertices graph 3 | 5.0% | 8.0% | 9.0% | 16.0% | 
 
-As what we can observe from the table above, there are some graphs that are hard for ACO algorithm to find the shortest cycle due to their geometric features. The 10-vertices graph 2 demonstrated the extreme case. It showed that even though we increase the amount of running times, it still could not find the shortest cycle even once. Except for those special cases due to the geometric features, increasing the running times indeed increases the accuracy, and it's more obvious in the graphs with more vertices. For example, the accuracy of the 13-vertices graph 1 went from 23.0% to 92.0% (run 1000 times v.s. run 10000 times).
+As what we can observe from the table above, there are some graphs that are hard for ACO algorithm to find the shortest cycle due to their geometric features. The 10-vertices graph 2 demonstrated the extreme case. It showed that even though we increase the amount of running times, it still could not find the shortest cycle even once. Except for those special cases due to the geometric features, increasing the running times indeed increases the accuracy, and it becomes more obvious in the graphs with more vertices. For example, the accuracy of the 13-vertices graph 1 went from 23.0% to 92.0% as we increase the running times (run 1000 times v.s. run 10000 times).
 
+The accuracy of finding the shortest cycle by ACO algorithm is actually quite random. It shows that the geometric feature has a significant influence on ACO algorithm for finding the shortest cycle. However, finding the shortest cycle is actually not that important. The main purpose of ACO algorithm is to come up with the cycle whose cost is close enough to the cost of shortest cycle with remarkable reduction in time complexity. Here is the table showing the differences of cost (distance) in percentage between the shortest cycle and the cycle given by ACO algorithm. (Here we only analyze the graphs with low accuracy of finding shortest cycle.)
 
+| Graph |  Run 1000 times | Run 2000 times | Run 5000 times | Run 10000times |
+| :-- | :--: |  :--: | :--: | :--: |
+| 5-vertices graph 2 | 23.0% | 18.0% | 24.0% | 28.0% |
+| 10-vertices graph 3 | 0.0% | 0.0% | 0.0% | 0.0% |
+| 13-vertices graph 3 | 5.0% | 8.0% | 9.0% | 16.0% | 
 
 
 
