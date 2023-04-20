@@ -197,7 +197,37 @@ def create_possibility(self, src, forbiden):
 
         return possibility
 ```
-The create_possibility() function takes two parameters. The src is the name of the vertex where the ant is current at. The forbiden is a set of vertices that the ant has visited. In this function, it first iterates through all the vertices, and add the vertices that the ant has not visited into a list, candidates. Then, it creates a defaultdict to store the result of $\tau_{src-dest} \eta_{src-dest}$ for every vertex in candidates.
+The create_possibility() function takes two parameters. The src is the name of the vertex where the ant is current at. The forbiden is a set of vertices that the ant has visited. In this function, it first iterates through all the vertices, and add the vertices that the ant has not visited into a list, candidates. Then, it creates a defaultdict, factor, to store the result of $\tau_{src-dest} \eta_{src-dest}$ for every vertex in candidates. After calculating the sum of all the elements in factor, it divides each elements in factor with the sum to get the possibility of choosing each path. The function creates another defaultdict, possibility, to store each avaliable vertex with its posibility and return the defaultdict.
+
+```Python
+def make_decision(self, possibility):
+        candidates = list(possibility.keys())
+
+        for ind, candidate in enumerate(candidates):
+            if ind != 0:
+                if ind == len(candidates) - 1:
+                    possibility[candidate] = 1.0
+                else:
+                    possibility[candidate] += possibility[candidates[ind - 1]]
+
+        rand = randint(0, 100000) / 100000
+        for candidate in candidates:
+            if rand <= possibility[candidate]:
+                return candidate
+```
+
+After calculating possibilities, I wrote the make_decision() function to simulate ants choosing the path. This function uses the defaultdict created by create_possibility() and adds up the possibilities for each vertex. Eventually, every vertex would have its own possibility interval. Then, I used randint() to generate a number between 0 and 1. When the number falls into the possibility interval of a certain vertex, the ant would choose this vertex to be the next vertex it visits.
+
+```Python
+def update_pheromone(self, src, dest, count):
+        old = self.pheromone_dict[src][dest]
+        n_pher = (old * (1 - self.evaporateSpeed)) + ((count * self.pheromonePerAnt) / self.adj_dict[src][dest])
+        if n_pher < 0.01:
+            n_pher = 0.01
+        self.pheromone_dict[src][dest] = n_pher
+        self.pheromone_dict[dest][src] = n_pher
+```
+The update_pheromone() function is to update the pheromone amount on the edge. It takes three parameters, the src and dest are the two vertices connected by the edge, the count is the number of ants that have passed this edge in a certain period of time. It basically follows the formula given in the previous section $\tau_{xy}^{new} = (1 - \rho)\tau_{xy}^{old} + \sum_{k}^{m} \Delta\tau_{xy}^{k}$
 
 
 
