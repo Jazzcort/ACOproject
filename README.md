@@ -71,6 +71,10 @@ In this section, I used [graph_utility.py](https://github.com/Spring23-CS5008-BO
 | 13-vertices graph 2 | 93.0% | 100.0% | 100.0% | 100.0% | 
 | 13-vertices graph 3 | 5.0% | 8.0% | 9.0% | 16.0% | 
 
+As what we can observe from the table above, there are some graphs that are hard for ACO algorithm to find the shortest cycle due to their geometric features. The 10-vertices graph 2 demonstrated the extreme case. It showed that even though we increase the amount of running times, it still could not find the shortest cycle even once. Except for those special cases due to the geometric features, increasing the running times indeed increases the accuracy, and it's more obvious in the graphs with more vertices. For example, the accuracy of the 13-vertices graph 1 went from $23.0%$ to $92.0%$ (run 1000 times v.s. run 10000 times).
+
+
+
 
 
 ## Application
