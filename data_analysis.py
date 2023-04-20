@@ -29,7 +29,7 @@ def main():
     graph_13v_03 = ["13_vertices_run1000_03.csv", "13_vertices_run2000_03.csv", "13_vertices_run5000_03.csv", "13_vertices_run10000_03.csv"]
 
     with open("accuracy.csv", mode="w") as w_file:
-        w_file.write("Graph      1000   2000   5000   10000\n")
+        w_file.write("Graph 1000 2000 5000 10000\n")
     #--------------------------------------------------------------
 
     tmp = ["5v_graph01"]
