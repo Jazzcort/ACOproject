@@ -1,3 +1,7 @@
+"""
+This function is used to calculate the margin between average output from ACO algorithm
+and the shortest cycle.
+"""
 def calculate_differences(file):
     firstLine = True
     count = 0

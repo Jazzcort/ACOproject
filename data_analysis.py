@@ -1,3 +1,6 @@
+"""
+This function is to calculate the accuracy of providing shortest cycle by ACO algorithm .
+"""
 def calculate_accuracy(file):
     firstLine = True
     count = 0
