@@ -103,8 +103,6 @@ The ACO algorithm was originally intended for solving NP-hard problems such as T
 There are more NP-hard problems, where we can apply ACO algorithm to get optimized solutions. For example, 
 VRP (Vehicle routing problem), Industrial scheduling, NSP (nurse scheduling problem), Bayesian networks, and DNA sequencing, etc. These problems covered a large range of applications including routing, scheduling, machine learning, and bioinformatics. Beside the academic applications, there are also many commercial company utilizing ACO algorithm to solve the real world problems. The company AntOptima ([www.antoptima.com](www.antoptima.com)) is one of the best example. It developes ACO-based solution methods for their customers to improve the efficiency of productive and logistic processes in their business.
 
-### Citation: 
-1. Stützle, Thomas, et al. "A concise overview of applications of ant colony optimization." Wiley encyclopedia of operations research and management science 2 (2011): 896-911.
 ## Implementation
 
 - [ant_colony_optimization.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/ant_colony_optimization.py): implementation of ACO algorithm in Python
@@ -290,3 +288,11 @@ Last but not least, the go_ants() function simulates a single round of ants goin
 My journey with ACO algorithm is very interesting. It's the first time that the algorithm I study does not always have the correct answer. Instead, the algorithm provides a high-quality result (close enough to the shortest cycle). I realize that not every problem needs the best answer. Sometimes, we as computer scientists need to balance the cost of finding the best answer and the answer itself. We have to think that "Do we really need the best answer?", especially when we deal with NP-hard problem. Take TSP for example, if there is a graph with a million vertices, even the strongest computer in the world can't find the shortest cycle. But, with ACO algorithm, it becomes possible to get a good enough answer. Even though we are not able to verify how close the answer given by ACO algorithm is to the best answer, we know the possibility that the answer we get is close enought to the best answer is very high due to our experiences of applying ACO algorithm to the smaller graphs. 
 
 Another great thing I have learned from this research is that we can develope a model based on a living creature. Behind all the mathematical equations, the Ant Colony Optimization algorithm is just an algorithm to simulate foraging behavior of natural ants. The success of this algorithm proves that "Everything exists for a reason". The stimulation and recation of a living creature are paired with the input and the output of an algorithm. The nature itself is a generator of algorithm. Maybe the optimized solution had already been discovered by some kind of animal in the world, we just need to find it.
+
+## Reference
+1. Dorigo M, Di Caro G. The Ant Colony optimization metaheuristic. In: Corne D, Dorigo M, Glover F editors. New ideas in optimization. London: McGraw Hill; 1999. pp. 11–32.
+2. Dorigo M, Di Caro G, Gambardella LM. Ant algorithms for discrete optimization. Artif Life 1999;5(2):137–172.
+3. Dorigo M, St  ̈utzle T. Ant colony optimization. Cambridge (MA): MIT Press; 2004. pp. 305.
+4. Stützle, Thomas, et al. "A concise overview of applications of ant colony optimization." Wiley encyclopedia of operations research and management science 2 (2011): 896-911.
+5. Wikimedia Foundation. (2023, March 27). Ant colony optimization algorithms. Wikipedia. Retrieved April 20, 2023, from https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms 
+
