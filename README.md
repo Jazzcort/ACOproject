@@ -271,8 +271,41 @@ The update_pheromone() function is to update the pheromone amount on the edge. I
 
 After a certain amount of ants going through the graph, we have to update the bestRoute with current status. Instead of using randint() to choose the path, we always choose the path with the highest possibility. The select_highest_possibility() is an auxiliary function to select the vertex with the highest possibility, so I could make update_best_route() eariler to read. The distance() function is also an auxiliary function to calculate the distance of a route. In the update_best_route() function, It would check the distance of the route it produced with minDistance and updatet the bestRoute and the minDistance if the distance of the route it produced is smaller.
 
+```Python
+    def go_ants(self, start, antSize):
+        count_dict = defaultdict(int)
+
+        for _ in range(antSize):
+            visited = set([start])
+            src = start
+
+            while len(visited) < len(self.adj_dict):
+                dest = self.make_decision(self.create_possibility(src, visited))
+                count_dict[(src, dest)] += 1
+                count_dict[(dest, src)] += 1
+                visited.add(dest)
+                src = dest
+
+            count_dict[(start, dest)] += 1
+            count_dict[(dest, start)] += 1
+
+        updated = set()
+
+        for i in self.pheromone_dict:
+            for j in self.pheromone_dict[i]:
+                if (i, j) not in updated:
+                    self.update_pheromone(i, j, count_dict[(i, j)])
+                    updated.add((i, j))
+                    updated.add((j, i))
+
+        self.update_best_route(start)
+```
+
+Last but not least, the go_ants() function simulates a single round of ants going through the graph. It takes the start vertex and the size of ant group as its parameter. In this function, it would make the given amount of ants go through the graph, update the pheromone_dict, and update the bestRoute. As what I mentioned previous analysis section, increasing the times of calling this function can increase the accuracy of providing the shortest cycle and reduce the margin between the average output distance and the shortest cycle. However, it also imcreases the time cost.
 
 
 ## Summary
 - Provide a summary of your findings
 - What did you learn?
+
+My journey with ACO algorithm is very interesting. It's the first time that the algorithm I study does not always have the correct answer. Instead, the algorithm provides a high-quality result (close enough to the shortest cycle). I realize that not every problem needs the best answer. Sometimes, we as computer scientists need to balance the cost of finding the best answer and the answer itself. We have to think that "Do we really need the best answer?", especially when we deal with NP-hard problem. Take TSP for example, if there is a graph with a million vertices, even the strongest computer in the world can't find the shortest cycle. But, with ACO algorithm, it becomes possible to get a good enough answer. Even though we are not able to verify how close the answer given by ACO algorithm is to the best answer, we know the possibility that the answer we get is close enought to the best answer is very high.
