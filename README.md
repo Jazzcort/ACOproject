@@ -8,20 +8,12 @@ Topic: Analyzing Ant Colony Optimization Algorithm and comparing it with naive s
 Link The Repository: https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort
 
 ## Introduction
-- What is the algorithm/datastructure?
-- What is the problem it solves? 
-- Provide a brief history of the algorithm/datastructure. (make sure to cite sources)
-- Provide an introduction to the rest of the paper. 
 
 In this final research paper, I selected Ant Colony Optimization to be the algorithm I'd be introducing and analyzing later in the following section. The Ant Colony Optimization is the optimization algorithm to solve TSP(Travelling Salesman Problem). It was first proposed in 1991 by Marco Dorigo and inspired by the behavior of biological ants searching for food. Even though the initial versions didn't provide results that's promising enough, its potential encouraged many researchers starting to study and improve this algorithm. Nowadays, ACO (Ant Colony Optimization) has been widely used in the field of both scientific and industrial.
 
 In the latter section of this paper, I would be demostrating the implementation of ACO of solving TSP problem and comparing it with a naive algorithm of solving TSP problem in the perspective of time complexity, space complexity, and accuracy.
 
 ## Analysis of Algorithm/Datastructure
-Make sure to include the following:
-- Time Complexity
-- Space Complexity
-- General analysis of the algorithm/datastructure
 
 Since the ACO was inspired by the foraging behavior of natural ants, pheromone was introduced in this algorithm. Basically, when an ant is passing through an edge in the graph, it deposits pheromone on this edge. The amount of pheromone on the edge becomes one of the two factors that affects an ant to choose where it would go next. The other factor would be the reciprocal of the distance between two points. The formula to calculate the possibility of choosing each path is:
 
@@ -57,8 +49,6 @@ As what we can observe from the above table, ACO algorithm reduce the time compl
 In the next cestion, I would use some data collected from different senarios to demonstrate the accuracy of ACO algorithm.
 
 ## Empirical Analysis
-- What is the empirical analysis?
-- Provide specific examples / data.
 
 In this section, I used [graph_utility.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/graph_utility.py) to randomly generate 9 different graphs (3 graphs with 5 vertices, 3 graphs with 10 vertices, ans 3 graphs with 13 vetices). Then, I used [generate_data.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/generate_data.py) to apply the ACO algorithm to these graphs with different settings (run 1000 times, 2000 times, 5000 times, 10000times). Finally, I used [data_analysis.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/data_analysis.py) to calculate the accuracy of the shortest cycle given by the ACO algorithm and export the data in [accuracy.csv](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/accuracy.csv). Here is the table of accuracies:
 
@@ -107,10 +97,6 @@ From the table above, we can observe that the average distance of the cycles giv
 As the information showed above, when there are only 5 vertices in the graph, the difference in time cost is very small. However, as the vertices increase, the differences start to stand out. The time cost increases significantly (0.34 seconds to 42.44 seconds) for the naive algorithm while there are just three more vertices added to the graph (10 vertices v.s. 13 vertices). The time cost of applying naive algorithm to a 14-vertices graph is roughly 300 - 400 seconds, but the ACO algorithm still cost less than 1 second. Therefore, the ACO algorithm is much more practical to be applied in the real world, where we have ten thousand vetices or even hundred thousand vertices to deal with.
 
 ## Application
-- What is the algorithm/datastructure used for?
-- Provide specific examples
-- Why is it useful / used in that field area?
-- Make sure to provide sources for your information.
 
 The ACO algorithm was originally intended for solving NP-hard problems such as TSP. Because there are no polynomial-time algorithms found for NP-hard problems, ACO algorithm is often used to generate solutions with high-quallity in reasonable time cost.
 
@@ -120,11 +106,6 @@ VRP (Vehicle routing problem), Industrial scheduling, NSP (nurse scheduling prob
 ### Citation: 
 1. Stützle, Thomas, et al. "A concise overview of applications of ant colony optimization." Wiley encyclopedia of operations research and management science 2 (2011): 896-911.
 ## Implementation
-- What language did you use?
-- What libraries did you use?
-- What were the challenges you faced?
-- Provide key points of the algorithm/datastructure implementation, discuss the code.
-- If you found code in another language, and then implemented in your own language that is fine - but make sure to document that.
 
 - [ant_colony_optimization.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/ant_colony_optimization.py): implementation of ACO algorithm in Python
 - [shortest_cycle.py](https://github.com/Spring23-CS5008-BOS-Lionelle/research-project-Jazzcort/blob/main/shortest_cycle.py): implementation of naive algorithm of finding shortest cycle in Python
@@ -305,8 +286,6 @@ Last but not least, the go_ants() function simulates a single round of ants goin
 
 
 ## Summary
-- Provide a summary of your findings
-- What did you learn?
 
 My journey with ACO algorithm is very interesting. It's the first time that the algorithm I study does not always have the correct answer. Instead, the algorithm provides a high-quality result (close enough to the shortest cycle). I realize that not every problem needs the best answer. Sometimes, we as computer scientists need to balance the cost of finding the best answer and the answer itself. We have to think that "Do we really need the best answer?", especially when we deal with NP-hard problem. Take TSP for example, if there is a graph with a million vertices, even the strongest computer in the world can't find the shortest cycle. But, with ACO algorithm, it becomes possible to get a good enough answer. Even though we are not able to verify how close the answer given by ACO algorithm is to the best answer, we know the possibility that the answer we get is close enought to the best answer is very high due to our experiences of applying ACO algorithm to the smaller graphs. 
 
